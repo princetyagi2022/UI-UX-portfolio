@@ -58,7 +58,29 @@ export default function ProjectsSection({ onSelectProject, inspectMode }) {
             {/* Visual Canvas Area */}
             <div className={`project-visual ${project.visual}`}>
               <div className="visual-overlay-action">
-                <span className="visual-pill">✦ View Case Study</span>
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="visual-live-btn"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <span className="live-dot-pulse"></span>
+                    <span>Visit Live Site</span>
+                    <Arrow />
+                  </a>
+                )}
+                <button 
+                  type="button" 
+                  className="visual-pill"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onSelectProject(project);
+                  }}
+                >
+                  ✦ View Case Study
+                </button>
               </div>
 
               {project.visual === 'analytics' && (
@@ -94,7 +116,16 @@ export default function ProjectsSection({ onSelectProject, inspectMode }) {
                   <div className="browser-mockup">
                     <div className="browser-topbar">
                       <div className="dots">● ● ●</div>
-                      <span className="browser-url">narrative.design/case-studies</span>
+                      <a 
+                        href="https://narrative-ui-ux-design-website.vercel.app/"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="browser-url-link"
+                        onClick={(e) => e.stopPropagation()}
+                        title="Click to visit live website"
+                      >
+                        narrative-ui-ux-design-website.vercel.app ↗
+                      </a>
                     </div>
                     <div className="browser-hero-text">
                       <b>Designing stories<br />that <em>stick.</em></b>
@@ -150,17 +181,31 @@ export default function ProjectsSection({ onSelectProject, inspectMode }) {
                 <p className="project-desc">{project.description}</p>
               </div>
 
-              <button 
-                type="button"
-                className="round-link-btn" 
-                aria-label={`Open case study for ${project.title}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onSelectProject(project);
-                }}
-              >
-                <Arrow />
-              </button>
+              {project.liveUrl ? (
+                <a 
+                  href={project.liveUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="round-link-btn has-live" 
+                  aria-label={`Open live project for ${project.title}`}
+                  title="Click to redirect to live project"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Arrow />
+                </a>
+              ) : (
+                <button 
+                  type="button"
+                  className="round-link-btn" 
+                  aria-label={`Open case study for ${project.title}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onSelectProject(project);
+                  }}
+                >
+                  <Arrow />
+                </button>
+              )}
             </div>
 
             <div className="card-footer-strip">
@@ -169,16 +214,32 @@ export default function ProjectsSection({ onSelectProject, inspectMode }) {
                   <span key={tag} className="tag-chip">{tag}</span>
                 ))}
               </div>
-              <button 
-                className="read-casestudy-text"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onSelectProject(project);
-                }}
-              >
-                <span>Read Full Case Study</span>
-                <span className="arrow-small">↗</span>
-              </button>
+              <div className="card-actions-group">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="live-redirect-btn"
+                    onClick={(e) => e.stopPropagation()}
+                    title={`Open ${project.title} live on Vercel`}
+                  >
+                    <span className="live-dot-pulse"></span>
+                    <span>Live Project</span>
+                    <Arrow />
+                  </a>
+                )}
+                <button 
+                  className="read-casestudy-text"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onSelectProject(project);
+                  }}
+                >
+                  <span>Case Study</span>
+                  <span className="arrow-small">↗</span>
+                </button>
+              </div>
             </div>
           </article>
         ))}

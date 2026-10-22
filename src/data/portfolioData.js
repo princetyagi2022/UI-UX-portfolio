@@ -4,8 +4,8 @@ export const personalInfo = {
   location: "Uttar Pradesh, India",
   phone: "+91 8218485967",
   email: "princetyagi9997@gmail.com",
-  linkedin: "https://www.linkedin.com/in/princetyagi",
-  github: "https://github.com/princetyagi",
+  linkedin: "https://www.linkedin.com/in/prince-tyagi-3248a9225",
+  github: "https://github.com/princetyagi2022/",
   resumeUrl: "/assets/Prince-Tyagi-Resume.pdf",
   summary: "Detail-oriented UI/UX Designer with hands-on Figma experience in wireframing, prototyping, and design iteration. Skilled in user research, user flows, responsive design, and usability testing, with an MCA background in full-stack development (React, Spring Boot) that enables smooth design-to-developer handoff. Seeking an entry-level UI/UX Designer role to create intuitive, user-centered digital products.",
   status: "Available for Entry-level UI/UX & Product Design Roles",
@@ -375,6 +375,7 @@ export const projectsList = [
     description: "A responsive UI/UX portfolio website designed to showcase multidisciplinary creative case studies across eight categories with effortless filtering, clear typography hierarchy, and mobile-first layouts.",
     accent: "orange",
     visual: "portfolio",
+    liveUrl: "https://narrative-ui-ux-design-website.vercel.app/",
     tags: ["React.js", "Design System", "Information Architecture", "Responsive Design", "WCAG AA"],
     caseStudy: {
       client: "Design Portfolio & Case Study Platform",
@@ -406,6 +407,7 @@ export const projectsList = [
     description: "A decision-ready analytics dashboard and AI chatbot interface focusing on clean data presentation, role-based access control (RBAC), and intuitive conversational assistance for modern business teams.",
     accent: "violet",
     visual: "analytics",
+    liveUrl: "https://ai-business-assistant-beta.vercel.app",
     tags: ["AI UX Design", "Analytics Dashboard", "React.js", "Spring Boot", "Data Visualization"],
     caseStudy: {
       client: "Enterprise Operations & Analytics",

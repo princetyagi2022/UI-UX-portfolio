@@ -39,6 +39,19 @@ export default function CaseStudyModal({ project, onClose }) {
               <h2 className="modal-title">{title}</h2>
               <p className="modal-subtitle">{subtitle}</p>
             </div>
+            {project.liveUrl && (
+              <a 
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button modal-live-btn"
+                title={`Open ${title} live website`}
+              >
+                <span className="live-dot-pulse"></span>
+                <span>Open Live Project</span>
+                <span className="arrow-icon">↗</span>
+              </a>
+            )}
           </div>
 
           {/* Key Impact Metrics */}
@@ -106,13 +119,29 @@ export default function CaseStudyModal({ project, onClose }) {
 
           {/* Modal Footer CTA */}
           <div className="modal-footer-cta">
-            <p>Interested in exploring the full Figma files, component variants, or user flows?</p>
-            <a 
-              href="mailto:princetyagi9997@gmail.com?subject=Regarding%20Case%20Study%20Discussion"
-              className="button primary-btn"
-            >
-              Request Walkthrough or Figma Files ↗
-            </a>
+            <div>
+              <h4>Experience the Live Interface</h4>
+              <p>Explore the live application deployment or discuss the underlying Figma design systems.</p>
+            </div>
+            <div className="modal-footer-actions">
+              {project.liveUrl && (
+                <a 
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button primary-btn"
+                >
+                  <span className="live-dot-pulse"></span>
+                  <span>Visit Live Project on Vercel ↗</span>
+                </a>
+              )}
+              <a 
+                href="mailto:princetyagi9997@gmail.com?subject=Regarding%20Case%20Study%20Discussion"
+                className="button outline-btn"
+              >
+                Request Figma Specs ↗
+              </a>
+            </div>
           </div>
         </div>
       </div>

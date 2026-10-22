@@ -62,6 +62,32 @@ export default function Hero({ jumpTo, inspectMode }) {
             <Arrow />
           </a>
         </div>
+
+        <div className="hero-social-strip">
+          <span className="social-label">Profiles:</span>
+          <a 
+            href={personalInfo.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hero-social-link"
+            title="Prince Tyagi on LinkedIn"
+          >
+            <span className="social-icon">in</span>
+            <span>LinkedIn</span>
+            <span className="arrow-tiny">↗</span>
+          </a>
+          <a 
+            href={personalInfo.github} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hero-social-link"
+            title="Prince Tyagi on GitHub"
+          >
+            <span className="social-icon">gh</span>
+            <span>GitHub</span>
+            <span className="arrow-tiny">↗</span>
+          </a>
+        </div>
       </div>
 
       <div className="hero-art-wrapper">
@@ -89,7 +115,7 @@ export default function Hero({ jumpTo, inspectMode }) {
             </div>
           </div>
 
-          <div className="proof-card">
+          {/* <div className="proof-card">
             <span className="proof-star">✦</span>
             <div>
               <p className="proof-title">Designing with</p>
@@ -99,7 +125,7 @@ export default function Hero({ jumpTo, inspectMode }) {
                 <span>Figma Tokens</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -49,6 +49,26 @@ export default function ContactSection({ inspectMode }) {
             <a href={`tel:${personalInfo.phone}`} className="phone-btn">
               <span>📞 {personalInfo.phone}</span>
             </a>
+
+            <a 
+              href={personalInfo.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-btn linkedin-btn"
+              title="Prince Tyagi on LinkedIn"
+            >
+              <span>🔗 LinkedIn Profile ↗</span>
+            </a>
+
+            <a 
+              href={personalInfo.github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-btn github-btn"
+              title="Prince Tyagi on GitHub"
+            >
+              <span>💻 GitHub (@princetyagi2022) ↗</span>
+            </a>
           </div>
         </div>
 
